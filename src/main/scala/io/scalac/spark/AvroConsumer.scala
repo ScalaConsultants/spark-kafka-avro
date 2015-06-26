@@ -1,7 +1,6 @@
 package io.scalac.spark
 
 import io.confluent.kafka.serializers.KafkaAvroDecoder
-import org.apache.avro.generic.GenericRecord
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{StreamingContext, Seconds}
@@ -42,7 +41,7 @@ object AvroConsumer {
     val messages = KafkaUtils.createDirectStream[Object, Object, KafkaAvroDecoder, KafkaAvroDecoder](ssc, kafkaParams, topicSet)
 
     // Process lines
-     val lines = messages.map(_._2.toString)
+     val lines = messages.map(AvroConverter.convert(_))
      lines.print()
 
     ssc.start()

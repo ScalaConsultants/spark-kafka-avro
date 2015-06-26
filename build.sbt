@@ -26,7 +26,8 @@ val dependencies = Seq(
     exclude("org.spark-project.spark", "unused"),
   "org.apache.avro" % "avro" % "1.7.7",
   "io.confluent" % "kafka-avro-serializer" % "1.0",
-  "com.github.scopt" %% "scopt" % "3.3.0"
+  "com.github.scopt" %% "scopt" % "3.3.0",
+  "joda-time" % "joda-time" % "2.8.1"
 )
 
 lazy val root = (project in file(".")).
