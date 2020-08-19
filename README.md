@@ -101,3 +101,5 @@ Finally run the application:
 Before creating another `Docker` image the previous one should be removed
 
     $ docker rmi spark-kafka-avro
+
+Developed by [Scalac](https://scalac.io/?utm_source=scalac_github&utm_campaign=scalac1&utm_medium=web)
